@@ -1,7 +1,4 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
@@ -25,6 +22,10 @@ Connection conexion=null;
         mensaje=ex.toString();
     }
  
+    mensaje="conectado";
+    if(conexion.isClosed())
+        mensaje="desconectado";
+
 String Query="CALL VerCategorias();";
 Statement Consulta = conexion.createStatement();
 ResultSet rs =Consulta.executeQuery(Query);
