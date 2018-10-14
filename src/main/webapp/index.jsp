@@ -21,13 +21,7 @@
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
 
-        if(result.next()) {
-           out.write("<p>" + result.getString("Categoria_Nombre") + "</p>");
-        }
- 
-        result.close();
-        stmt.close();
-        conn.close();
+
       }
       catch (Exception e) {
          System.out.println("Error " + e);
@@ -70,7 +64,13 @@
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias<span class="caret"></span></a>
              <ul class="dropdown-menu" role="menu">
                 <%
-
+        while(result.next()) {
+           out.println("<li> <a href='Categoria.jsp?ID="+result.getString("Categoria_Nombre")+"'></a>"+result.getString("Categoria_Nombre")+"</li>");
+        }
+ 
+        result.close();
+        stmt.close();
+        conn.close();
                 %>
              </ul>
              </li>
