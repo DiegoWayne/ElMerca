@@ -22,10 +22,6 @@ Connection conexion=null;
     } catch (Exception ex){
         mensaje=ex.toString();
     }
- 
-    mensaje="conectado";
-    if(conexion.isClosed())
-        mensaje="desconectado";
 
 
 
