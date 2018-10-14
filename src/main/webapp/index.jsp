@@ -22,7 +22,7 @@
         result = stmt.executeQuery("CALL VerCategorias();");
 
         if(result.next()) {
-           out.write("<p>" + result.getString(1) + "</p>");
+           out.write("<p>" + result.getString("Categoria_Nombre") + "</p>");
         }
  
         result.close();
