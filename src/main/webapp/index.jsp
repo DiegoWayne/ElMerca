@@ -27,9 +27,7 @@ Connection conexion=null;
     if(conexion.isClosed())
         mensaje="desconectado";
 
-String Query="CALL VerCategorias();";
-Statement Consulta = conexion.createStatement();
-ResultSet rs =Consulta.executeQuery(Query);
+
 
 %>
 
@@ -69,10 +67,7 @@ ResultSet rs =Consulta.executeQuery(Query);
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias<span class="caret"></span></a>
              <ul class="dropdown-menu" role="menu">
                 <%
-                 while (rs.next())
-                 {
-                 out.println("<li> <a href='Categoria.jsp?ID="+rs.getString("nombre_categoria")+"</a></li>");
-                 }
+
                 %>
              </ul>
              </li>
