@@ -15,7 +15,6 @@
         String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
         String usuario = "becdff0c984df4";
         String clave = "51e4aab00b5ef5b";
-        Class.forName("com.mysql.jdbc.Driver");
 
         conn = DriverManager.getConnection(url,usuario,clave);
 
@@ -24,7 +23,7 @@
         result = stmt.executeQuery("CALL VerCategorias();");
 
         while(result.next()) {
-          Categorias.add(result.getString("Categoria_Nombre"+"sds"));
+          Categorias.add(result.getString("Categoria_Nombre"));
         }
  
         result.close();
