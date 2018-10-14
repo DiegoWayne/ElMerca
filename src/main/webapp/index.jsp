@@ -8,8 +8,9 @@
       ResultSet result = null;
       Statement stmt = null;
       ArrayList Categorias=new ArrayList();
-
+        out.write("skdmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmajnjsdnfjsdnvjsdnvhdfvh dfhvbsdhfbshfbshbfhdsbshbdfhsbdfhsbfhsbdfhsbhfbs");
       try {
+              out.write("skdmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmajnjsdnfjsdnvjsdnvhdfvh dfhvbsdhfbshfbshbfhdsbshbdfhsbdfhsbfhsbdfhsbhfbs");
         /*parametros para la conexion*/
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
@@ -23,7 +24,7 @@
         result = stmt.executeQuery("CALL VerCategorias();");
 
         while(result.next()) {
-        out.write("skdmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmajnjsdnfjsdnvjsdnvhdfvh dfhvbsdhfbshfbshbfhdsbshbdfhsbdfhsbfhsbdfhsbhfbs");
+
           Categorias.add(result.getString("Categoria_Nombre"));
 
         }
