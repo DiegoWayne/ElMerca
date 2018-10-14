@@ -24,7 +24,7 @@
         result = stmt.executeQuery("CALL VerCategorias();");
 
         while(result.next()) {
-          Categorias.add(result.getString("Categoria_Nombre"));
+          Categorias.add(result.getString("Categoria_Nombre"+"sds"));
         }
  
         result.close();
