@@ -1,5 +1,5 @@
 <%@page import="java.sql.*, java.net.*"%>
-<%@ page import="java.util.ArrayList" language="java" %>
+<%@page import="java.util.ArrayList" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -23,7 +23,9 @@
         result = stmt.executeQuery("CALL VerCategorias();");
 
         while(result.next()) {
+        out.println("skdmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmajnjsdnfjsdnvjsdnvhdfvh dfhvbsdhfbshfbshbfhdsbshbdfhsbdfhsbfhsbdfhsbhfbshfbshdbfhsdbfhsdbfhsbdfhsdbfhsbdfhsbdhfbshbfhsdbfhsdbfhsbdfhsbfhdbfhsbdf")
           Categorias.add(result.getString("Categoria_Nombre"));
+
         }
  
         result.close();
