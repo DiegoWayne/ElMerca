@@ -23,7 +23,7 @@
         result = stmt.executeQuery("CALL VerCategorias();");
 
         while(result.next()) {
-        out.println("skdmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmajnjsdnfjsdnvjsdnvhdfvh dfhvbsdhfbshfbshbfhdsbshbdfhsbdfhsbfhsbdfhsbhfbs");
+        out.write("skdmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmajnjsdnfjsdnvjsdnvhdfvh dfhvbsdhfbshfbshbfhdsbshbdfhsbdfhsbfhsbdfhsbhfbs");
           Categorias.add(result.getString("Categoria_Nombre"));
 
         }
