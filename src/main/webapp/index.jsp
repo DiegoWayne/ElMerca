@@ -3,34 +3,35 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
-Connection conexion=null;
- 
-    String mensaje="";
- 
-    /*parametros para la conexion*/
-    String driver = "com.mysql.jdbc.Driver";
-    String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
-    String usuario = "becdff0c984df4";
-    String clave = "51e4aab00b5ef5b";
-    /*procedimiento ario = "roode la conexion*/
-    try{
+      Connection conn = null;
+      ResultSet result = null;
+      Statement stmt = null;
+
+      try {
+        /*parametros para la conexion*/
+        String driver = "com.mysql.jdbc.Driver";
+        String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
+        String usuario = "becdff0c984df4";
+        String clave = "51e4aab00b5ef5b";
         Class.forName("com.mysql.jdbc.Driver");
-        conexion = DriverManager.getConnection(url,usuario,clave);
- 
-        /*guardando la conexion en la session*/
-        session.setAttribute("conexion",conexion);
-    } catch (Exception ex){
-        mensaje=ex.toString();
-    }
- 
-    mensaje="conectado";
-    if(conexion.isClosed())
-        mensaje="desconectado";
 
-String Query="CALL VerCategorias();";
-Statement Consulta = conexion.createStatement();
-ResultSet rs =Consulta.executeQuery(Query);
+        conn = DriverManager.getConnection(url,usuario,clave);
 
+
+        stmt = conn.createStatement();
+        result = stmt.executeQuery("CALL VerCategorias();");
+
+        if(result.next()) {
+           out.write("<p>" + result.getString(1) + "</p>");
+        }
+ 
+        result.close();
+        stmt.close();
+        conn.close();
+      }
+      catch (Exception e) {
+         System.out.println("Error " + e);
+      }
 %>
 
 <!DOCTYPE html>
