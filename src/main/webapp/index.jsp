@@ -70,10 +70,7 @@
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias<span class="caret"></span></a>
              <ul class="dropdown-menu" role="menu">
                 <%
-                 while (rs.next())
-                 {
-                 out.println("<li> <a href='Categoria.jsp?ID="+rs.getString("Categoria_Nombre")+"</a></li>");
-                 }
+
                 %>
              </ul>
              </li>
