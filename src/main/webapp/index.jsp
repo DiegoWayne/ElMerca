@@ -1,4 +1,5 @@
 <%@page import="java.sql.*, java.net.*"%>
+<%@ page import="java.util.ArrayList" language="java" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -6,6 +7,7 @@
       Connection conn = null;
       ResultSet result = null;
       Statement stmt = null;
+      ArrayList Categorias=new ArrayList();
 
       try {
         /*parametros para la conexion*/
@@ -21,7 +23,13 @@
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
 
-
+        while(result.next()) {
+          Categorias.add(result.getString("Categoria_Nombre"));
+        }
+ 
+        result.close();
+        stmt.close();
+        conn.close();
       }
       catch (Exception e) {
          System.out.println("Error " + e);
@@ -64,13 +72,11 @@
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias<span class="caret"></span></a>
              <ul class="dropdown-menu" role="menu">
                 <%
-        while(result.next()) {
-           out.println("<li> <a href='Categoria.jsp?ID="+result.getString("Categoria_Nombre")+"'></a>"+result.getString("Categoria_Nombre")+"</li>");
-        }
- 
-        result.close();
-        stmt.close();
-        conn.close();
+                    int i=0;
+                    for(i=0;i<Categorias.size();i++)
+                    {
+                     out.println("<li> <a href='Categoria.jsp?ID="+Categorias.get(i)+"'>"+Categorias.get(i)+"</a></li>");
+                    }
                 %>
              </ul>
              </li>
