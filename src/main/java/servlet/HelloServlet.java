@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(
-        name = "MyServlet",
+        name = "MyServlet", 
         urlPatterns = {"/hello"}
     )
 public class HelloServlet extends HttpServlet {
@@ -23,5 +23,5 @@ public class HelloServlet extends HttpServlet {
         out.flush();
         out.close();
     }
-
+    
 }
