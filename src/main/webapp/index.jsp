@@ -25,10 +25,6 @@ Connection conexion=null;
         mensaje=ex.toString();
     }
  
-    mensaje="conectado";
-    if(conexion.isClosed())
-        mensaje="desconectado";
-
 String Query="CALL VerCategorias();";
 Statement Consulta = conexion.createStatement();
 ResultSet rs =Consulta.executeQuery(Query);
