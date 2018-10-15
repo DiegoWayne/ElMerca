@@ -10,15 +10,17 @@
       ArrayList Categorias=new ArrayList();
 
       try {
-        /*parametros para la conexion*/
-        String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
-        String usuario = "becdff0c984df4";
-        String clave = "51e4aab00b5ef5b";
+
 
         conn = DriverManager.getConnection(url,usuario,clave);
 
+        URI dbUri = new URI(System.getenv("DATABASE_URL"));
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
 
+        conn = DriverManager.getConnection(dbUrl, username, password);
+        
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
 
