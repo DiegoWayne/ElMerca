@@ -24,7 +24,15 @@ public class HelloServlet extends HttpServlet {
     private String dbURL = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
     private String dbUser = "becdff0c984df4";
     private String dbPass = "51e4aab00b5ef5b";
-     
+    
+         @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        ServletOutputStream out = resp.getOutputStream();
+        out.write("hello heroku".getBytes());
+        out.flush();
+        out.close();
+    }
     @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
