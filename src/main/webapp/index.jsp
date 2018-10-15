@@ -16,6 +16,7 @@
         String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
         String usuario = "becdff0c984df4";
         String clave = "51e4aab00b5ef5b";
+         out.write("Conecto ");
 
         conn = DriverManager.getConnection(url,usuario,clave);
          out.write("Conecto ");
@@ -38,6 +39,7 @@
         conn.close();
       }
       catch (Exception e) {
+           out.write("Erros ");
          System.out.println("Error " + e);
       }
 %>
