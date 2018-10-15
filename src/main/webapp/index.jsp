@@ -17,7 +17,7 @@
         String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
 
         conn = DriverManager.getConnection(dbUrl, username, password);
-
+        out.println(dbUrl + username + password);
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
 
