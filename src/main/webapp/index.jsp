@@ -10,22 +10,28 @@
       ArrayList Categorias=new ArrayList();
 
       try {
+        /*parametros para la conexion*/
+        String driver = "com.mysql.jdbc.Driver";
+        String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
+        String usuario = "becdff0c984df4";
+        String clave = "51e4aab00b5ef5b";
 
-        URI dbUri = new URI(System.getenv("DATABASE_URL"));
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
+        conn = DriverManager.getConnection(url,usuario,clave);
+         System.out.println("Conecto ");
 
-        conn = DriverManager.getConnection(dbUrl, username, password);
-        out.println(dbUrl + username + password);
+
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
+         System.out.println("Conecto ");
 
         while(result.next()) 
         {
+                   System.out.println("Conecto ");
+
           Categorias.add(result.getString("Categoria_Nombre"));
         }
- 
+          System.out.println("Conecto ");
+
         result.close();
         stmt.close();
         conn.close();
@@ -34,4 +40,3 @@
          System.out.println("Error " + e);
       }
 %>
-
