@@ -23,7 +23,7 @@
 
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
-         .out.write("Conecto ");
+        out.write("Conecto ");
 
         while(result.next()) 
         {
