@@ -35,67 +35,6 @@ public class HelloServlet extends HttpServlet {
     
         protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-        // gets values of text fields
-           String Titulo= request.getParameter("Titulo");
-           String Descripcion= request.getParameter("descripcion");
-           String Privacidad= request.getParameter("privacidad");
-           String Categoria =request.getParameter("categorias");
-           String id_usuario=request.getParameter("Id_usuario") ;
 
-         
-        InputStream VideoF = null; // input stream of the upload file
-
-        // obtains the upload file part in this multipart request
-        Part Video = request.getPart("Video");
-
-        if (Video != null) {
-            // prints out some information for debugging
-            System.out.println(Video.getName());
-            System.out.println(Video.getSize());
-            System.out.println(Video.getContentType());
-             
-            // obtains input stream of the upload file
-            VideoF = Video.getInputStream();
-        }
-        
-
-         
-        Connection conn = null; // connection to the database
-        String message = null;  // message will be sent back to client
-         
-        try {
-            // connects to the database
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
- 
-            // constructs SQL statement
-            String sql = "CALL Subir_Video(?,"+Privacidad+ ","+id_usuario+",?,"+Categoria+",?);";
-            PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, Titulo);
-            statement.setString(2, Descripcion);
-            statement.setBlob(3, VideoF);
-
-
- 
-            // sends the statement to the database server
-            int row = statement.executeUpdate();
-            if (row > 0) {
-                message = "File uploaded and saved into database";
-            }
-        } catch (SQLException ex) {
-            message = "ERROR: " + ex.getMessage();
-            ex.printStackTrace();
-        } finally {
-            if (conn != null) {
-                // closes the database connection
-                try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
-            // sets the message in request scope
-             
-        }
     }
 }
