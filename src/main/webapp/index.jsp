@@ -11,16 +11,13 @@
 
       try {
 
-
-        conn = DriverManager.getConnection(url,usuario,clave);
-
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
         String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
 
         conn = DriverManager.getConnection(dbUrl, username, password);
-        
+
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
 
