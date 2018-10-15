@@ -140,7 +140,7 @@
               <div class='navbar-custom-menu'>
                     <ul class='nav navbar-nav'>
                     <li class='user user-menu'>
-                    <a href='Registro.php' > 
+                    <a href='Registro.jsp' > 
                     <span class='hidden-xs'>Registro</span>
                     </a>
                     </li>
