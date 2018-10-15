@@ -8,6 +8,7 @@
       ResultSet result = null;
       Statement stmt = null;
       ArrayList Categorias=new ArrayList();
+         out.write("Conecto ");
 
       try {
         /*parametros para la conexion*/
@@ -17,20 +18,20 @@
         String clave = "51e4aab00b5ef5b";
 
         conn = DriverManager.getConnection(url,usuario,clave);
-         System.out.println("Conecto ");
+         out.write("Conecto ");
 
 
         stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
-         System.out.println("Conecto ");
+         .out.write("Conecto ");
 
         while(result.next()) 
         {
-                   System.out.println("Conecto ");
+            out.write("Conecto ");
 
           Categorias.add(result.getString("Categoria_Nombre"));
         }
-          System.out.println("Conecto ");
+     out.write("Conecto ");
 
         result.close();
         stmt.close();
