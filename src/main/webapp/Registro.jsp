@@ -23,7 +23,7 @@
   <div class="register-box-body">
     <p class="login-box-msg">Registro de nuevo usuario</p>
 
-    <form action="Registro" method="post" enctype="multipart/form-data">
+    <form action="MyServlet" method="post" enctype="multipart/form-data">
       <!-- Nombre Completo -->
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Nombre Completo" name="Nombre" required="">
