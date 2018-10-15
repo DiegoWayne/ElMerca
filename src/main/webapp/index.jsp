@@ -18,6 +18,7 @@
         String clave = "51e4aab00b5ef5b";
          out.write("Conecto ");
 
+        Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection(url,usuario,clave);
          out.write("Conecto ");
 
