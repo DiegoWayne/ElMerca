@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloServlet extends HttpServlet {
 
        // database connection settings
-    private String dbURL = "jjdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
+    private String dbURL = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
     private String dbUser = "becdff0c984df4";
     private String dbPass = "51e4aab00b5ef5b";
 
@@ -96,18 +96,6 @@ public class HelloServlet extends HttpServlet {
             }
         } catch (SQLException ex) {
             message = "ERROR: " + ex.getMessage();
-            ex.printStackTrace();
-        } finally {
-            if (conn != null) {
-                // closes the database connection
-                try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
-            // sets the message in request scope
-             
         }
     }
     
