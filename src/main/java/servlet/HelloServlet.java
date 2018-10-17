@@ -71,7 +71,7 @@ public class HelloServlet extends HttpServlet {
             conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
 
             // constructs SQL statement
-            String query = "GuardarUsuario(?,?,?,?,?,?,?,?,?,?,?);";
+            String query = "Call GuardarUsuario(?,?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, Nombre);
             statement.setString(2, Nickname);
@@ -90,7 +90,7 @@ public class HelloServlet extends HttpServlet {
             if (row > 0) {
 
                 message = "File uploaded and saved into database";
-                out.println("<h1>" + query + "</h1>");
+                out.println("<h1>" + message + "</h1>");
             }
         } 
         catch (SQLException ex) 
