@@ -19,7 +19,6 @@ import javax.servlet.http.Part;
 
 @WebServlet(
         name = "MyServlet", 
-        urlPatterns = {"/hello"}
     )
 @MultipartConfig(maxFileSize = 16177215) 
 
