@@ -34,6 +34,9 @@ public class HelloServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
+   out.write("todo bien");
+
+
            // Infromacion de usuario
            String Nombre= request.getParameter("Nombre");
            String Nickname= request.getParameter("Nickname");
@@ -65,8 +68,10 @@ public class HelloServlet extends HttpServlet {
          
            try {
             // connects to the database
+   out.println("todo bien");
+
             conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
- 
+   out.println("todo bien");
             // constructs SQL statement
             String query = "GuardarUsuario(?,?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement statement = conn.prepareStatement(query);
