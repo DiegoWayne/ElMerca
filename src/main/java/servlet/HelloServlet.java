@@ -10,10 +10,12 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 @WebServlet(
         name = "MyServlet", 
@@ -72,7 +74,6 @@ public class HelloServlet extends HttpServlet {
          
            try {
             // connects to the database
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
  
             // constructs SQL statement
