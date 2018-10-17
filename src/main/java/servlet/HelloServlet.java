@@ -31,15 +31,6 @@ public class HelloServlet extends HttpServlet {
     private String dbPass = "51e4aab00b5ef5b";
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        ServletOutputStream out = resp.getOutputStream();
-        out.write("hello heroku".getBytes());
-        out.flush();
-        out.close();
-    }
-
-    @Override
 
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
@@ -100,6 +91,18 @@ public class HelloServlet extends HttpServlet {
         catch (SQLException ex) 
         {
             message = "ERROR: " + ex.getMessage();
+        }
+        finally {
+            if (conn != null) {
+                // closes the database connection
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            // sets the message in request scope
+             
         }
     }
     
