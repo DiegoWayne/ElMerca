@@ -5,11 +5,6 @@
         <servlet-class>HelloServlet.java</servlet-class>
     </servlet>
 
-    <servlet-mapping>
-        <servlet-name>MyServlet</servlet-name>
-        <url-pattern>/MyServlet</url-pattern>
-    </servlet-mapping>
-
     <session-config>
         <session-timeout>
             30

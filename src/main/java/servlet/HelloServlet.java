@@ -17,7 +17,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-@WebServlet("MyServlet")
+@WebServlet(
+        name = "MyServlet",
+        urlPatterns = {"/MyServlet"}
+    )
 @MultipartConfig(maxFileSize = 16177215) 
 
 public class HelloServlet extends HttpServlet {
