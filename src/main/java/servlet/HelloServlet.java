@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 @WebServlet(
-        name = "MyServlet", 
+        name = "MyServlet"
     )
 @MultipartConfig(maxFileSize = 16177215) 
 
