@@ -90,7 +90,7 @@ public class HelloServlet extends HttpServlet {
             if (row > 0) {
 
                 message = "File uploaded and saved into database";
-                out.println("<h1>" + message + "</h1>");
+                out.println("<h1>" + query + "</h1>");
             }
         } 
         catch (SQLException ex) 
