@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -26,6 +27,7 @@ import javax.servlet.http.Part;
 public class HelloServlet extends HttpServlet {
 
        // database connection settings
+    private PrintWriter out ;
     private String dbURL = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
     private String dbUser = "becdff0c984df4";
     private String dbPass = "51e4aab00b5ef5b";
@@ -35,6 +37,7 @@ public class HelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
            // Infromacion de usuario
+           out = response.getWriter();
            String Nombre= request.getParameter("Nombre");
            String Nickname= request.getParameter("Nickname");
            String Correo= request.getParameter("Correo");
@@ -85,12 +88,15 @@ public class HelloServlet extends HttpServlet {
             // sends the statement to the database server
             int row = statement.executeUpdate();
             if (row > 0) {
+
                 message = "File uploaded and saved into database";
+                out.println("<h1>" + message + "</h1>");
             }
         } 
         catch (SQLException ex) 
         {
             message = "ERROR: " + ex.getMessage();
+          out.println("<h1>" + message + "</h1>");
         }
         finally {
             if (conn != null) {
