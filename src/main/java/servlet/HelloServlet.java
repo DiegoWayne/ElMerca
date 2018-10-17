@@ -37,6 +37,7 @@ public class HelloServlet extends HttpServlet {
         out.close();
     }
 
+    @Override
 
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
@@ -94,7 +95,9 @@ public class HelloServlet extends HttpServlet {
             if (row > 0) {
                 message = "File uploaded and saved into database";
             }
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) 
+        {
             message = "ERROR: " + ex.getMessage();
         }
     }
