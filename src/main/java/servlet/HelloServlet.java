@@ -58,7 +58,11 @@ public class HelloServlet extends HttpServlet {
            Part Portada = request.getPart("Imagen_2");
 
            if (Perfil != null) 
-            FotoPerfil = Perfil.getInputStream();
+            {    
+            out.println(Perfil.getName());
+            out.println(Perfil.getSize());
+            out.println(Perfil.getContentType());
+              FotoPerfil = Perfil.getInputStream()};
 
            if (Portada != null) 
             FotoPortada = Portada.getInputStream();
