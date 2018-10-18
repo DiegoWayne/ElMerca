@@ -21,7 +21,7 @@
         conn = DriverManager.getConnection(url,usuario,clave);
 
         String query="Call Login('"+request.getParameter("Correo")+"'');";
-
+        out.println(query);  
         stmt = conn.createStatement();
         result = stmt.executeQuery(query);
 
@@ -32,6 +32,7 @@
           session.setAttribute("Portada",result.getString("Usuario_Portada")); 
           session.setAttribute("Mote",result.getString("Usuario_Mote"));
           response.sendRedirect("https://elmerca.herokuapp.com/");
+          out.println("<a href='Login.jsp'>SiFunciono</a>");  
         }
         else
         out.println("<a href='Login.jsp'>Voler a Intentarlo</a>");  
