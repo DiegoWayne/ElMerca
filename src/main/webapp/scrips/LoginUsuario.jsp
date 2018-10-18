@@ -20,7 +20,7 @@
 
         conn = DriverManager.getConnection(url,usuario,clave);
 
-        String query="Call Login('"+request.getParameter("Correo")+"'');";
+        String query="Call Login('"+request.getParameter("Correo")+"');";
         out.println(query);  
         stmt = conn.createStatement();
         result = stmt.executeQuery(query);
