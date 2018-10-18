@@ -25,6 +25,9 @@
         stmt = conn.createStatement();
         result = stmt.executeQuery(query);
 
+        while(result.next()) 
+        {
+
         if(result.getString("Usuario_Contrasena").equals(request.getParameter("Contrasena")))
         {
           session.setAttribute("ID",result.getString("Usuario_ID"));
@@ -36,6 +39,8 @@
         else
         out.println("<a href='Login.jsp'>Voler a Intentarlo</a>"); 
 
+        }
+ 
         result.close();
         stmt.close();
         conn.close();
