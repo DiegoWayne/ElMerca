@@ -54,15 +54,11 @@ public class HelloServlet extends HttpServlet {
            String Estados= request.getParameter("Estados");
            
            //obteneido las imagenes de los inputs
-           Part Perfil = request.getPart("Imagen_1");
-           Part Portada = request.getPart("Imagen_2");
+           Part Perfil = request.getPart("Perfil");
+           Part Portada = request.getPart("Portada");
 
            if (Perfil != null) 
-            {    
-            out.println(Perfil.getName());
-            out.println(Perfil.getSize());
-            out.println(Perfil.getContentType());
-              FotoPerfil = Perfil.getInputStream();}
+              FotoPerfil = Perfil.getInputStream();
 
            if (Portada != null) 
             FotoPortada = Portada.getInputStream();
