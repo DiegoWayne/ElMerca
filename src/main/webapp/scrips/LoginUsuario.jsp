@@ -24,7 +24,6 @@
         out.println(query);  
         stmt = conn.createStatement();
         result = stmt.executeQuery(query);
-          out.println("sdksldslmdsmdsmdksmdksm");  
 
         if(result.getString("Usuario_Contrasena").equals(request.getParameter("Contrasena")))
         {
@@ -42,6 +41,6 @@
         conn.close();
       }
       catch (Exception e) {
-         System.out.println("Error " + e);
+         out.println("Error " + e);
       }
 %>
