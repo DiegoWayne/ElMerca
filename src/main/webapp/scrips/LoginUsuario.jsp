@@ -20,7 +20,7 @@
 
         conn = DriverManager.getConnection(url,usuario,clave);
 
-        String query="Call Login("+request.getParameter("Email")+");";
+        String query="Call Login('"+request.getParameter("Email")+"'');";
 
         stmt = conn.createStatement();
         result = stmt.executeQuery(query);
