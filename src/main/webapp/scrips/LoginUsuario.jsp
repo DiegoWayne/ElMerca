@@ -24,6 +24,7 @@
         out.println(query);  
         stmt = conn.createStatement();
         result = stmt.executeQuery(query);
+          out.println("sdksldslmdsmdsmdksmdksm");  
 
         if(result.getString("Usuario_Contrasena").equals(request.getParameter("Contrasena")))
         {
@@ -31,12 +32,11 @@
           session.setAttribute("Perfil",result.getString("Usuario_Perfil"));
           session.setAttribute("Portada",result.getString("Usuario_Portada")); 
           session.setAttribute("Mote",result.getString("Usuario_Mote"));
-          response.sendRedirect("https://elmerca.herokuapp.com/");
-          out.println("<a href='Login.jsp'>SiFunciono</a>");  
+          out.println("sdksldslmdsmdsmdksmdksm");  
         }
         else
         out.println("<a href='Login.jsp'>Voler a Intentarlo</a>"); 
-         
+
         result.close();
         stmt.close();
         conn.close();
