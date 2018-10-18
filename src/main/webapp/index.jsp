@@ -62,7 +62,7 @@
   <div class="container">
 
         <div class="navbar-header">
-          <a href="Index.php" class="navbar-brand"> <p style="border-style: solid; border-width:2px;"><b>El</b>Merca</p></a>
+          <a href="index.jsp" class="navbar-brand"> <p style="border-style: solid; border-width:2px;"><b>El</b>Merca</p></a>
         </div>
 
         <!-- Menu Principal -->
@@ -130,7 +130,7 @@
          <div class='navbar-custom-menu'>
                     <ul class='nav navbar-nav'>
                     <li class='user user-menu'>
-                    <a href='Login.php' > 
+                    <a href='Login.jsp' > 
                     <span class='hidden-xs'>Login</span>
                     </a>
                     </li>
@@ -140,7 +140,7 @@
               <div class='navbar-custom-menu'>
                     <ul class='nav navbar-nav'>
                     <li class='user user-menu'>
-                    <a href='Registro.php' > 
+                    <a href='Registro.jsp' > 
                     <span class='hidden-xs'>Registro</span>
                     </a>
                     </li>
@@ -168,7 +168,7 @@
                     <div class="card">
                     <img src="http://placehold.it/150x100" alt="..." class="margin">
                     <div class="container">
-                    <a href="Articulo.php"><h3>Producto</h3></a>
+                    <a href="Articulo.jsp"><h3>Producto</h3></a>
                     </div>
                    </div>
                    </div>
