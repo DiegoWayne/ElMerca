@@ -32,9 +32,10 @@
           session.setAttribute("Portada",result.getString("Usuario_Portada")); 
           session.setAttribute("Mote",result.getString("Usuario_Mote"));
           response.sendRedirect("https://elmerca.herokuapp.com/");
+          out.Write("<a href='Login.jsp'>SiFunciono</a>");  
         }
         else
-        out.println("<a href='Login.jsp'>Voler a Intentarlo</a>");        
+        out.Write("<a href='Login.jsp'>Voler a Intentarlo</a>");  
         result.close();
         stmt.close();
         conn.close();
