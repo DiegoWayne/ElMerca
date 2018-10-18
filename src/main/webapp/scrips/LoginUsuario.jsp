@@ -25,7 +25,7 @@
         stmt = conn.createStatement();
         result = stmt.executeQuery(query);
 
-        if(result.getString("Usuario_Contrasena")==request.getParameter("Contrasena"))
+        if(result.getString("Usuario_Contrasena").equals(request.getParameter("Contrasena")))
         {
           session.setAttribute("ID",result.getString("Usuario_ID"));
           session.setAttribute("Perfil",result.getString("Usuario_Perfil"));
@@ -35,7 +35,8 @@
           out.println("<a href='Login.jsp'>SiFunciono</a>");  
         }
         else
-        out.println("<a href='Login.jsp'>Voler a Intentarlo</a>");  
+        out.println("<a href='Login.jsp'>Voler a Intentarlo</a>"); 
+         
         result.close();
         stmt.close();
         conn.close();
