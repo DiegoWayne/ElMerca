@@ -1,4 +1,4 @@
-package ConexionC;
+package launch;
 
 class BDPAPW
 {
