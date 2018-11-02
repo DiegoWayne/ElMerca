@@ -9,16 +9,34 @@
      private Connection conn = null;
      private ResultSet result = null;
      private Statement stmt = null;
+      ArrayList Categorias=new ArrayList();
 
     public Conexion() 
     {
-    	   try {
-             conn = DriverManager.getConnection(url,usuario,clave);
-              }
-                    catch (Exception e) {
+     try {
+        conn = DriverManager.getConnection(url,usuario,clave);
+         }
+      catch (Exception e) {
          System.out.println("Error " + e);
       }
     }
+
+ public ArrayList verCategorias()
+ {
+
+ 	        stmt = conn.createStatement();
+        result = stmt.executeQuery("CALL VerCategorias();");
+
+        while(result.next()) 
+        {
+          Categorias.add(result.getString("Categoria_Nombre"));
+        }
+ 
+        result.close();
+        stmt.close();
+
+        return Categorias;
+ }
 
 }
 %>

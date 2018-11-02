@@ -11,26 +11,8 @@
       ArrayList Categorias=new ArrayList();
 
       try {
-        /*parametros para la conexion*/
-        String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
-        String usuario = "becdff0c984df4";
-        String clave = "2a67e3b23e75902";
 
-        conn = DriverManager.getConnection(url,usuario,clave);
-
-
-        stmt = conn.createStatement();
-        result = stmt.executeQuery("CALL VerCategorias();");
-
-        while(result.next()) 
-        {
-          Categorias.add(result.getString("Categoria_Nombre"));
-        }
- 
-        result.close();
-        stmt.close();
-        conn.close();
+        Categorias=estePartido.verCategorias();
       }
       catch (Exception e) {
          System.out.println("Error " + e);
