@@ -23,7 +23,7 @@
 
  public ArrayList verCategorias()
  {
-
+  try{
  	        stmt = conn.createStatement();
         result = stmt.executeQuery("CALL VerCategorias();");
 
@@ -36,6 +36,13 @@
         stmt.close();
 
         return Categorias;
+    }
+
+          catch (Exception e) {
+         System.out.println("Error " + e);
+      }
+
+      return 0;
  }
 
 }
