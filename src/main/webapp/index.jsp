@@ -8,7 +8,7 @@
       ResultSet result = null;
       Statement stmt = null;
       ArrayList Categorias=new ArrayList();
-      Conexion hola;
+      Conexion hola new Conexion();
 
       try {
         /*parametros para la conexion*/
