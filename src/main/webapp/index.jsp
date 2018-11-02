@@ -4,7 +4,7 @@
 <%@ include file='Conexion.jsp' %>
 
 <%  
- Partido estePartido = new Partido();
+      Conexion estePartido = new Conexion();
       Connection conn = null;
       ResultSet result = null;
       Statement stmt = null;
