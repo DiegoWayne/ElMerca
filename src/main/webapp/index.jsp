@@ -1,6 +1,6 @@
 <%@page import="java.sql.*, java.net.*"%>
 <%@page import="java.util.ArrayList" %>
-<%@ page import="Conexion.*" %>
+<%@ page import="ConexionC.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
@@ -8,9 +8,9 @@
       ResultSet result = null;
       Statement stmt = null;
       ArrayList Categorias=new ArrayList();
+      Conexion hola;
 
       try {
-      Conexion hola;
         /*parametros para la conexion*/
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
