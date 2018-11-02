@@ -35,14 +35,13 @@
         result.close();
         stmt.close();
 
-        return Categorias;
     }
 
           catch (Exception e) {
          System.out.println("Error " + e);
       }
 
-      return 0;
+        return Categorias;
  }
 
 }
