@@ -1,14 +1,14 @@
 <%@page import="java.sql.*, java.net.*"%>
 <%@page import="java.util.ArrayList" %>
-<%@ page import="servlet.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ include file='Conexion.jsp' %>
 
 <%  
+ Partido estePartido = new Partido();
       Connection conn = null;
       ResultSet result = null;
       Statement stmt = null;
       ArrayList Categorias=new ArrayList();
-      Conexion hola new Conexion();
 
       try {
         /*parametros para la conexion*/
