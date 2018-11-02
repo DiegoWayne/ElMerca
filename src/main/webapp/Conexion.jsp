@@ -12,7 +12,12 @@
 
     public Conexion() 
     {
-     conn = DriverManager.getConnection(url,usuario,clave);
+    	   try {
+             conn = DriverManager.getConnection(url,usuario,clave);
+              }
+                    catch (Exception e) {
+         System.out.println("Error " + e);
+      }
     }
 
 }
