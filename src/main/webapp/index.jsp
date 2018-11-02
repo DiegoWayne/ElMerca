@@ -1,6 +1,6 @@
 <%@page import="java.sql.*, java.net.*"%>
 <%@page import="java.util.ArrayList" %>
-
+<%@ page import="Conexion.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
@@ -10,11 +10,12 @@
       ArrayList Categorias=new ArrayList();
 
       try {
+      Conexion hola;
         /*parametros para la conexion*/
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
         String usuario = "becdff0c984df4";
-        String clave = "51e4aab00b5ef5b";
+        String clave = "2a67e3b23e75902";
 
         conn = DriverManager.getConnection(url,usuario,clave);
 
