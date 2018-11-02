@@ -1,6 +1,6 @@
 <%@page import="java.sql.*, java.net.*"%>
 <%@page import="java.util.ArrayList" %>
-<%@ page import="launch.*" %>
+<%@ page import="servlet.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
