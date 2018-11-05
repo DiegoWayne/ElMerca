@@ -112,7 +112,9 @@
          <%
          if(session.getAttribute("ID") != null)
           {
-          byte[] encodeBase64 = Base64.encodeBase64(session.getAttribute("Perfil"));
+          InputStream is = session.getAttribute("Perfil");
+          byte b[] = IOUtils.toByteArray(is);
+          byte[] encodeBase64 = Base64.encodeBase64(b);
           String base64DataString = new String(encodeBase64 , "UTF-8");
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
