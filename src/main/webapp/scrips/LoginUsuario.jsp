@@ -12,6 +12,7 @@
         if(Conex.Login(request.getParameter("Correo"),request.getParameter("Contrasena"))==true)
         {
         out.println("si");
+        out.println(session.getAttribute("ID"));
         }
         else
         {
