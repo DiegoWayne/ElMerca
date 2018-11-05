@@ -1,6 +1,6 @@
 <%@page import="java.sql.*, java.net.*"%>
 <%@page import="java.util.ArrayList" %>
-<%@ include file='Conexion.jsp' %>
+<%@ include file='../Conexion.jsp' %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
