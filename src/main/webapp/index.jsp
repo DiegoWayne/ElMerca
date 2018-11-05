@@ -7,7 +7,8 @@
       Conexion Conex = new Conexion();
       ArrayList Categorias=new ArrayList();
 
-      try {
+      try 
+      {
 
         Categorias=Conex.verCategorias();
         Conex.Cerrar();

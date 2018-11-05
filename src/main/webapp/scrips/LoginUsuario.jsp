@@ -4,48 +4,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%  
-      Connection conn = null;
-      ResultSet result = null;
-      Statement stmt = null;
-
-      String Contrasena;
-
+      Conexion Conex = new Conexion();
       try 
       {
-        /*parametros para la conexion*/
-        String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
-        String usuario = "becdff0c984df4";
-        String clave = "51e4aab00b5ef5b";
-
-        conn = DriverManager.getConnection(url,usuario,clave);
-
-        String query="Call Login('"+request.getParameter("Correo")+"');";
-        out.println(query);  
-        stmt = conn.createStatement();
-        result = stmt.executeQuery(query);
-
-        while(result.next()) 
+        if(Conex.Login(request.getParameter("Correo"),request.getParameter("Contrasena"))==true)
         {
-
-        if(result.getString("Usuario_Contrasena").equals(request.getParameter("Contrasena")))
-        {
-          session.setAttribute("ID",result.getString("Usuario_ID"));
-          session.setAttribute("Perfil",result.getString("Usuario_Perfil"));
-          session.setAttribute("Portada",result.getString("Usuario_Portada")); 
-          session.setAttribute("Mote",result.getString("Usuario_Mote"));
-          out.println("sdksldslmdsmdsmdksmdksm");  
+        out.println("si");
         }
         else
-        out.println("<a href='Login.jsp'>Voler a Intentarlo</a>"); 
-
+        {
+        out.println("no");          
         }
- 
-        result.close();
-        stmt.close();
-        conn.close();
+        Conex.Cerrar();
+
       }
       catch (Exception e) {
-         out.println("Error " + e);
+         System.out.println("Error " + e);
       }
 %>
+
+
+
