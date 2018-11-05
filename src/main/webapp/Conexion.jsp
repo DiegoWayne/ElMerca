@@ -9,7 +9,7 @@
      private Connection conn = null;
      private ResultSet result = null;
      private Statement stmt = null;
-      ArrayList Categorias=new ArrayList();
+     private ArrayList Resultado=new ArrayList();
 
     public Conexion() 
     {
@@ -29,7 +29,7 @@
 
         while(result.next()) 
         {
-          Categorias.add(result.getString("Categoria_Nombre"));
+          Resultado.add(result.getString("Categoria_Nombre"));
         }
  
         result.close();
@@ -41,8 +41,12 @@
          System.out.println("Error " + e);
       }
 
-        return Categorias;
+        return Resultado;
  }
+  public void Cerrar ()
+  {
+   conn.close();
+  }
 
 }
 %>

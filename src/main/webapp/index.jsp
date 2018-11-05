@@ -4,12 +4,14 @@
 <%@ include file='Conexion.jsp' %>
 
 <%  
-      Conexion estePartido = new Conexion();
+      Conexion Conex = new Conexion();
       ArrayList Categorias=new ArrayList();
 
       try {
 
-        Categorias=estePartido.verCategorias();
+        Categorias=Conex.verCategorias();
+        Conex.Cerrar();
+
       }
       catch (Exception e) {
          System.out.println("Error " + e);
