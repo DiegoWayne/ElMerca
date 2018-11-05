@@ -58,7 +58,7 @@
       </div>
     </form>
     <% if(request.getParameterMap().containsKey("Mensaje"))
-        out.print(request.getParameter("Mensaje")); %>
+        out.print("<a href=# class='text-center' style='color:red;'>Usuario o contraseña invalidos</a>");%>
     <a href="Registro.jsp" class="text-center">Register a new membership</a>
   </div>
 
