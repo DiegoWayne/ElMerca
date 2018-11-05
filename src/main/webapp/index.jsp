@@ -110,7 +110,7 @@
       </div>
          
          <%
-         if(session.getAttribute("ID") != null) ;
+         if(session.getAttribute("ID") != null)out.println(session.getAttribute("ID"));
          %>
          <div class='navbar-custom-menu'>
                     <ul class='nav navbar-nav'>
