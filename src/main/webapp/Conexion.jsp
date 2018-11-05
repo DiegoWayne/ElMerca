@@ -10,8 +10,7 @@
      private ResultSet result = null;
      private Statement stmt = null;
      private ArrayList Resultado=new ArrayList();
-     HttpSession session=request.getSession();  
-
+     
     public Conexion() 
     {
      try {
