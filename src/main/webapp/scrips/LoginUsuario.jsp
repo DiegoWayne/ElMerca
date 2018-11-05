@@ -5,6 +5,7 @@
 
 <%  
       Conexion Conex = new Conexion();
+      Conex.session=request.getSession();
       try 
       {
         if(Conex.Login(request.getParameter("Correo"),request.getParameter("Contrasena"))==true)

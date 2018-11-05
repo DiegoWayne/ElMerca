@@ -10,7 +10,7 @@
      private ResultSet result = null;
      private Statement stmt = null;
      private ArrayList Resultado=new ArrayList();
-     private HttpSession session;  
+     public HttpSession session;  
 
     public Conexion() 
     {
