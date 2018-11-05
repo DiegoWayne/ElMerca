@@ -11,14 +11,15 @@
       {
         if(Conex.Login(request.getParameter("Correo"),request.getParameter("Contrasena"))==true)
         {
-        out.println("si");
-        out.println(session.getAttribute("ID"));
+        Conex.Cerrar();
+        response.sendRedirect("https://elmerca.herokuapp.com/");
         }
+
         else
         {
-        out.println("no");          
-        }
         Conex.Cerrar();
+        response.sendRedirect("https://elmerca.herokuapp.com/Login.jsp");
+        }
 
       }
       catch (Exception e) {
