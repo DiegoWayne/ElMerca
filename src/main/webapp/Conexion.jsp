@@ -14,13 +14,13 @@
       public HttpSession session;  
 
       public Conexion() 
-      {
-       try
-        conn = DriverManager.getConnection(url,usuario,clave);
-       
-       catch (Exception e) 
-        System.out.println("Error " + e);
-      }
+        {
+         try
+         {conn = DriverManager.getConnection(url,usuario,clave);}
+
+         catch (Exception e) 
+         {System.out.println("Error " + e);}
+        }
 
       public ArrayList verCategorias()
        {
@@ -30,16 +30,15 @@
           result = stmt.executeQuery("CALL VerCategorias();");
 
           while(result.next()) 
-          {
             Resultado.add(result.getString("Categoria_Nombre"));
-          }
+          
           result.close();
           stmt.close();
-          }
-          catch (Exception e) 
-          {
-          System.out.println("Error " + e);
-          }
+         }
+
+        catch (Exception e) 
+          {System.out.println("Error " + e);}
+          
          return Resultado;
        }
 
