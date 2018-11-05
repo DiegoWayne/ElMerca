@@ -57,7 +57,8 @@
 
       </div>
     </form>
-    <%= try {if(request.getParameter("Mensaje") !=  null)out.println("Usia");} %>
+    <% if(request.getParameterMap().containsKey("Mensaje"))
+        out.print(request.getParameter("Mensaje")); %>
     <a href="Registro.jsp" class="text-center">Register a new membership</a>
   </div>
 
