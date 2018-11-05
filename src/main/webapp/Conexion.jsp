@@ -38,33 +38,30 @@
 
         catch (Exception e) 
           {System.out.println("Error " + e);}
-          
-         return Resultado;
+
+        return Resultado;
        }
 
       public void Cerrar()
-      {
-        try
         {
-          conn.close();
+          try
+          {conn.close();}
+
+          catch (Exception e) 
+          {System.out.println("Error " + e);}
+
         }
-        catch (Exception e) 
-        {
-          System.out.println("Error " + e);
-        }
-      }
 
       public boolean Login(String Correo,String Contrasena)
-      {
-            try
+        {
+          try
+          {
+            String query="Call Login('"+Correo+"');";
+            stmt = conn.createStatement();
+            result = stmt.executeQuery(query);
+            while(result.next()) 
             {
-                String query="Call Login('"+Correo+"');";
-                stmt = conn.createStatement();
-                result = stmt.executeQuery(query);
-                while(result.next()) 
-                {
-
-                if(result.getString("Usuario_Contrasena").equals(Contrasena))
+              if(result.getString("Usuario_Contrasena").equals(Contrasena))
                 {
                   session.setAttribute("ID",result.getString("Usuario_ID"));
                   session.setAttribute("Perfil",result.getString("Usuario_Perfil"));
@@ -74,23 +71,21 @@
                   stmt.close();
                   return true;
                 }
-                else
+
+              else
                 {
                   result.close();
                   stmt.close();
                   return false; 
                 }
-
-              }
             }
+          }
 
           catch (Exception e) 
-          {
-             System.out.println("Error " + e);
-          }
-         
-         return false;
-      }
+          {System.out.println("Error " + e);}
+             
+          return false;
+        }
 
 }
 %>
