@@ -112,7 +112,8 @@
          <%
          if(session.getAttribute("ID") != null)
           {
-          byte imgData[] = session.getAttribute("Perfil").getBytes(1, (int) session.getAttribute("Perfil").length());
+          Blob image= session.getAttribute("Perfil");
+          byte imgData[] = image.getBytes(1, (int) image.length());
 
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
