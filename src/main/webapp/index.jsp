@@ -9,7 +9,6 @@
 
       try 
       {
-
         Categorias=Conex.verCategorias();
         Conex.Cerrar();
 
@@ -110,6 +109,9 @@
         </ul>
       </div>
          
+         <%
+         if(session.getAttribute("ID") != null) ;
+         %>
          <div class='navbar-custom-menu'>
                     <ul class='nav navbar-nav'>
                     <li class='user user-menu'>
