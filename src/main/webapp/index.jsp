@@ -5,9 +5,6 @@
 
 <%  
       Conexion estePartido = new Conexion();
-      Connection conn = null;
-      ResultSet result = null;
-      Statement stmt = null;
       ArrayList Categorias=new ArrayList();
 
       try {
