@@ -112,14 +112,15 @@
          <%
          if(session.getAttribute("ID") != null)
           {
-          Blob image= session.getAttribute("Perfil");
-          byte imgData[] = image.getBytes(1, (int) image.length());
+         
+String base64String = session.getAttribute("Perfil");
 
+byte[] decodedBase64Byte = Base64.decodeBase64(base64String);
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
-                      "<img src='data:image/jpeg;base64,"+imgData+
+                      "<img src='data:image/jpeg;base64,"+decodedBase64Byte+
                       "' class='user-image' alt='User Image'>");
           }
          %>

@@ -64,8 +64,8 @@
               if(result.getString("Usuario_Contrasena").equals(Contrasena))
                 {
                   session.setAttribute("ID",result.getString("Usuario_ID"));
-                  session.setAttribute("Perfil",result.getBlob("Usuario_Perfil"));
-                  session.setAttribute("Portada",result.getString("Usuario_Portada")); 
+                  session.setAttribute("Perfil",result.getString("Usuario_Perfil"));
+                  session.setAttribute("Portada",result.getBlob("Usuario_Portada")); 
                   session.setAttribute("Mote",result.getString("Usuario_Mote"));
                   result.close();
                   stmt.close();
