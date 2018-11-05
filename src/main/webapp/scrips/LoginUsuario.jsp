@@ -18,7 +18,7 @@
         else
         {
         Conex.Cerrar();
-        response.sendRedirect("https://elmerca.herokuapp.com/Login.jsp");
+        response.sendRedirect("https://elmerca.herokuapp.com/Login.jsp?Mensaje=1");
         }
 
       }
