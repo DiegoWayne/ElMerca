@@ -112,15 +112,12 @@
          <%
          if(session.getAttribute("ID") != null)
           {
-          InputStream is = session.getAttribute("Perfil");
-          byte b[] = IOUtils.toByteArray(is);
-          byte[] encodeBase64 = Base64.encodeBase64(b);
-          String base64DataString = new String(encodeBase64 , "UTF-8");
+
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
-                      "<img src='data:image/jpeg;base64,"+base64DataString+
+                      "<img src='data:image/jpeg;base64,"+session.getAttribute("Perfil")+
                       "' class='user-image' alt='User Image'>");
           }
          %>
