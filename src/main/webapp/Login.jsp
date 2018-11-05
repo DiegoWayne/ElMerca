@@ -57,7 +57,7 @@
 
       </div>
     </form>
-    <%= if(request.getParameter("Mensaje") ==1 ); %>
+    <%= try {if(request.getParameter("Mensaje") !=  null)out.println("Usia");} %>
     <a href="Registro.jsp" class="text-center">Register a new membership</a>
   </div>
 
