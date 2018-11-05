@@ -112,11 +112,13 @@
          <%
          if(session.getAttribute("ID") != null)
           {
+          String base64DataString = Base64.encodeBase64String(session.getAttribute("Perfil"));
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
-                      "<img src='data:image/jpeg;base64,"+session.getAttribute("Perfil")+"' class='user-image' alt='User Image'>");
+                      "<img src='data:image/jpeg;base64,"+base64DataString+
+                      "' class='user-image' alt='User Image'>");
           }
          %>
          <div class='navbar-custom-menu'>
