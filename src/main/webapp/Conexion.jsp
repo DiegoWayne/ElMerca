@@ -45,7 +45,12 @@
  }
   public void Cerrar ()
   {
+     try{
    conn.close();
+    }
+              catch (Exception e) {
+         System.out.println("Error " + e);
+      }
   }
 
 }
