@@ -114,7 +114,7 @@
           {
          
         Blob bl = (Blob)session.getAttribute("Perfil");
-        byte[] imgData = bl.getBytes(1,(int)bl.length())
+        byte[] imgData = bl.getBytes(1,(int)bl.length());
 
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
