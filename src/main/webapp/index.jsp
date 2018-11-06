@@ -113,7 +113,7 @@
          if(session.getAttribute("ID") != null)
           {
          
-        Blob bl = session.getAttribute("Perfil");
+        Blob bl = (Blob)session.getAttribute("Perfil");
 
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
