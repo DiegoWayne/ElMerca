@@ -115,12 +115,15 @@
          
         Blob bl = (Blob)session.getAttribute("Perfil");
         byte[] imgData = bl.getBytes(1,(int)bl.length());
+        byte[] encodeBase64 = Base64.encodeBase64(imgData);
+        String base64DataString = new String(encodeBase64 , "UTF-8");
+
 
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
-                      "<img src='data:image/jpeg;base64,"+imgData+
+                      "<img src='data:image/jpeg;base64,"+base64DataString+
                       "' class='user-image' alt='User Image'>");
           }
          %>
