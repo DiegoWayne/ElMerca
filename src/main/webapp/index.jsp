@@ -114,12 +114,11 @@
           {
          
 
-byte[] decodedBase64Byte = Base64.decodeBase64(session.getAttribute("Perfil"));
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
-                      "<img src='data:image/jpeg;base64,"+decodedBase64Byte+
+                      "<img src='data:image/jpeg;base64,"+base64_encode(session.getAttribute("Perfil"))+
                       "' class='user-image' alt='User Image'>");
           }
          %>
