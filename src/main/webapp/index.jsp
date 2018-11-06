@@ -1,5 +1,7 @@
 <%@page import="java.sql.*, java.net.*"%>
 <%@page import="java.util.ArrayList" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.io.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file='Conexion.jsp' %>
 
@@ -115,12 +117,14 @@
          
         Blob bl = (Blob)session.getAttribute("Perfil");
         byte[] imgData = bl.getBytes(1,(int)bl.length());
+           String str = DatatypeConverter.printBase64Binary(imgData);
+
 
           out.println("<div class='navbar-custom-menu'>"+
                       "<ul class='nav navbar-nav'>"+
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
-                      "<img src='data:image/jpeg;base64,"+ Base64.encodeBase64String(imgData)+
+                      "<img src='data:image/jpeg;base64,"+ str+
                       "' class='user-image' alt='User Image'>");
           }
          %>
