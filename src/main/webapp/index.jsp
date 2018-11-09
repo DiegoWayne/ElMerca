@@ -118,7 +118,6 @@
           {
          
         Blob bl = (Blob)session.getAttribute("Perfil");
-        byte[] imgData = bl.getBytes(1,(int)bl.length());
         byte[] encodeBase64 = Base64.getEncoder().encode(bl.getBytes(1,(int)bl.length()));
         String base64DataString = new String(encodeBase64 , "UTF-8");
 
@@ -127,18 +126,27 @@
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
                       "<img src='data:image/jpeg;base64,"+ base64DataString+
-                      "' class='user-image' alt='User Image'>");
+                      "' class='user-image' alt='User Image'>"+
+                      "<span class='hidden-xs'>"+session.getAttribute("Mote")+"</span>"+
+                      "</a>"+
+                      "</li>"+
+                      "</ul>"+
+                      "</div>");
+          }
+          else
+          {
+            out.println("<div class='navbar-custom-menu'>
+                         <ul class='nav navbar-nav'>
+                         <li class='user user-menu'>
+                         <a href='Login.jsp' > 
+                         <span class='hidden-xs'>Login</span>
+                         </a>
+                         </li>
+                         </ul>
+                         </div>");
           }
          %>
-         <div class='navbar-custom-menu'>
-                    <ul class='nav navbar-nav'>
-                    <li class='user user-menu'>
-                    <a href='Login.jsp' > 
-                    <span class='hidden-xs'>Login</span>
-                    </a>
-                    </li>
-                    </ul>
-              </div>
+
          <!-- Usuario -->
               <div class='navbar-custom-menu'>
                     <ul class='nav navbar-nav'>
