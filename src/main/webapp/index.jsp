@@ -135,29 +135,26 @@
           }
           else
           {
-            out.println("<div class='navbar-custom-menu'>
-                         <ul class='nav navbar-nav'>
-                         <li class='user user-menu'>
-                         <a href='Login.jsp' > 
-                         <span class='hidden-xs'>Login</span>
-                         </a>
-                         </li>
-                         </ul>
-                         </div>");
+            out.println("<div class='navbar-custom-menu'>"+
+                         "<ul class='nav navbar-nav'>"+
+                         "<li class='user user-menu'>"+
+                         "<a href='Login.jsp' >" +
+                         "<span class='hidden-xs'>Login</span>"+
+                         "</a>"+
+                         "</li>"+
+                         "</ul>"+
+                         "</div>");
+            out.println("<div class='navbar-custom-menu'>"+
+                         "<ul class='nav navbar-nav'>"+
+                         "<li class='user user-menu'>"+
+                         "<a href='Registro.jsp' >" +
+                         "<span class='hidden-xs'>Registro</span>"+
+                         "</a>"+
+                         "</li>"+
+                         "</ul>"+
+                         "</div>");                         
           }
          %>
-
-         <!-- Usuario -->
-              <div class='navbar-custom-menu'>
-                    <ul class='nav navbar-nav'>
-                    <li class='user user-menu'>
-                    <a href='Registro.jsp' > 
-                    <span class='hidden-xs'>Registro</span>
-                    </a>
-                    </li>
-                    </ul>
-              </div>
-
   </div>
   </nav>
   </header>
