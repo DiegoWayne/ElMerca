@@ -119,7 +119,7 @@
          
         Blob bl = (Blob)session.getAttribute("Perfil");
         byte[] imgData = bl.getBytes(1,(int)bl.length());
-        byte[] encodeBase64 = Base64.encodeBase64(imgData.getBytes());
+        byte[] encodeBase64 = Base64.getEncoder().encode(imgData);
         String base64DataString = new String(encodeBase64 , "UTF-8");
 
           out.println("<div class='navbar-custom-menu'>"+
