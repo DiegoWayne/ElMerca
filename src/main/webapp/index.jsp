@@ -118,7 +118,7 @@
           {
          
         Blob bl = (Blob)session.getAttribute("Perfil");
-        byte[] encodeBase64 = Base64.encodeBase64(session.getAttribute("Perfil"));
+        byte[] encodeBase64 = Base64.encodeBase64((String)session.getAttribute("Perfil"));
         String base64DataString = new String(encodeBase64 , "UTF-8");
 
           out.println("<div class='navbar-custom-menu'>"+
