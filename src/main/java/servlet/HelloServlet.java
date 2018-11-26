@@ -70,7 +70,7 @@ public class HelloServlet extends HttpServlet {
 
             //aqui encriptamos la  contraseña
             byte[] ContraBits = Base64.getEncoder().encode(Contrasena.getBytes());
-            String ContraEncryp = new String(encodeBase64 , "UTF-8");
+            String ContraEncryp = new String(ContraBits , "UTF-8");
          
            try {
             // connects to the database
