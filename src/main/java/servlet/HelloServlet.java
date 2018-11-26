@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import java.util.Base64;
 
 @WebServlet(
         name = "MyServlet",
@@ -65,6 +66,11 @@ public class HelloServlet extends HttpServlet {
                 
             Connection conn = null; // connection to the database
             String message = null;  // message will be sent back to client
+
+
+            //aqui encriptamos la  contraseña
+            byte[] ContraBits = Base64.getEncoder().encode(Contrasena.getBytes());
+            String ContraEncryp = new String(encodeBase64 , "UTF-8");
          
            try {
             // connects to the database
@@ -75,7 +81,7 @@ public class HelloServlet extends HttpServlet {
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, Nombre);
             statement.setString(2, Nickname);
-            statement.setString(3, Contrasena);
+            statement.setString(3, ContraEncryp);
             statement.setString(4, Telefono);
             statement.setString(5, Calle);
             statement.setString(6, Numero);
@@ -88,9 +94,7 @@ public class HelloServlet extends HttpServlet {
             // sends the statement to the database server
             int row = statement.executeUpdate();
             if (row > 0) {
-
-                message = "File uploaded and saved into database";
-                out.println("<h1>" + message + "</h1>");
+               response.sendRedirect("https://elmerca.herokuapp.com/");
             }
         } 
         catch (SQLException ex) 
