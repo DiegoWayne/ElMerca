@@ -59,7 +59,7 @@
           try
           {
             byte[] Contrasenaa = Base64.getEncoder().encode(Contrasena.getBytes());
-            String ContrasenaEncrip = new String(Contrasena , "UTF-8");
+            String ContrasenaEncrip = new String(Contrasenaa , "UTF-8");
             String query="Call Login('"+Correo+"');";
             stmt = conn.createStatement();
             result = stmt.executeQuery(query);
