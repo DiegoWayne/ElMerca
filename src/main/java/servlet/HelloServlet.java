@@ -29,7 +29,7 @@ public class HelloServlet extends HttpServlet {
 
        // database connection settings
     private PrintWriter out ;
-    private String dbURL = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_38a1979085a7b59";
+    private String dbURL = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_975e6d64fa5c593";
     private String dbUser = "b76c5227f01472";
     private String dbPass = "e22f42eb";
 
