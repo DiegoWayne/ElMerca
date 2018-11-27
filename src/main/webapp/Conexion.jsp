@@ -1,4 +1,6 @@
 
+<%@page import="java.util.Base64"%>
+
 <%! 
   public class Conexion 
     {
@@ -56,12 +58,14 @@
         {
           try
           {
+            byte[] Contrasena = Base64.getEncoder().encode(Contrasena.getBytes());
+            String ContrasenaEncrip = new String(Contrasena , "UTF-8");
             String query="Call Login('"+Correo+"');";
             stmt = conn.createStatement();
             result = stmt.executeQuery(query);
             while(result.next()) 
             {
-              if(result.getString("Usuario_Contrasena").equals(Contrasena))
+              if(result.getString("Usuario_Contrasena").equals(ContrasenaEncrip))
                 {
                   session.setAttribute("ID",result.getString("Usuario_ID"));
                   session.setAttribute("Perfil",result.getBlob("Usuario_Perfil"));
