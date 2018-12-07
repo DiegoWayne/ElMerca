@@ -14,8 +14,6 @@
       try 
       {
         Categorias=Conex.verCategorias();
-        Conex.Cerrar();
-
       }
       catch (Exception e) {
          System.out.println("Error " + e);
@@ -125,7 +123,7 @@
                       "<ul class='nav navbar-nav'>"+
                       "<li class='user user-menu'>"+
                       "<a href='Perfil.jsp'>"+
-                      "<img src='data:image/jpeg;base64,"+ base64DataString+
+                      "<img src='data:image/jpeg;base64,"+ Conex.Imagen((Blob)session.getAttribute("Perfil"))+
                       "' class='user-image' alt='User Image'>"+
                       "<span class='hidden-xs'>"+session.getAttribute("Mote")+"</span>"+
                       "</a>"+
