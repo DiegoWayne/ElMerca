@@ -25,7 +25,7 @@ import java.util.Base64;
     )
 @MultipartConfig(maxFileSize = 16177215) 
 
-public class HelloServlet extends HttpServlet {
+public class Registro extends HttpServlet {
 
        // database connection settings
     private PrintWriter out ;
@@ -39,24 +39,19 @@ public class HelloServlet extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
            // Infromacion de usuario
            out = response.getWriter();
-           String Nombre= request.getParameter("Nombre");
-           String Nickname= request.getParameter("Nickname");
-           String Correo= request.getParameter("Correo");
-           String Contrasena =request.getParameter("Contrasena");
+           String Precio= request.getParameter("Precio");
+           String Unidades= request.getParameter("Unidades");
+           String Categoria= request.getParameter("Categoria");
+           String Nombre =request.getParameter("Nombre");
 
-           InputStream FotoPerfil= null; // Foto de perfil
-           InputStream FotoPortada = null; // Foto de portada
-
-           //Datos de envio
-           String Telefono= request.getParameter("Telefono");
-           String Calle= request.getParameter("Calle");
-           String Numero= request.getParameter("Numero");
-           String Postal= request.getParameter("Postal");
-           String Estados= request.getParameter("Estados");
+           InputStream Imagen1= null; // Foto de perfil
+           InputStream Imagen2 = null; // Foto de portada
+           InputStream Imagen3= null; // Foto de perfil
+           InputStream Video = null; // Foto de portada
            
            //obteneido las imagenes de los inputs
-           Part Perfil = request.getPart("Perfil");
-           Part Portada = request.getPart("Portada");
+           Part File_Perfil = request.getPart("Perfil");
+           Part File_Portada = request.getPart("Portada");
 
            if (Perfil != null) 
               FotoPerfil = Perfil.getInputStream();
@@ -66,11 +61,6 @@ public class HelloServlet extends HttpServlet {
                 
             Connection conn = null; // connection to the database
             String message = null;  // message will be sent back to client
-
-
-            //aqui encriptamos la  contraseña
-            byte[] ContraBits = Base64.getEncoder().encode(Contrasena.getBytes());
-            String ContraEncryp = new String(ContraBits , "UTF-8");
          
            try {
             // connects to the database
