@@ -5,9 +5,9 @@
   public class Conexion 
     {
       private String driver = "com.mysql.jdbc.Driver";       
-      private String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_975e6d64fa5c593";
-      private String usuario = "b76c5227f01472";
-      private String clave = "e22f42eb";
+      private String url = "jdbc:mysql://elmer2.com/ElMerca";
+      private String usuario = "BrendaAilz";
+      private String clave = "12345";
 
       private Connection conn = null;
       private ResultSet result = null;
