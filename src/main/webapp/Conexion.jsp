@@ -105,7 +105,7 @@
 
 
                   catch (Exception e) 
-          {return (String)e;}
+          {return "";}
 
        }
     }
