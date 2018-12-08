@@ -95,11 +95,17 @@
 
        public String Imagen (Blob image)
        {
-        Blob bl = image;
+        try
+        {        Blob bl = image;
         byte[] encodeBase64 = Base64.getEncoder().encode(bl.getBytes(1,(int)bl.length()));
         String base64DataString = new String(encodeBase64 , "UTF-8");
         
-        return base64DataString;
+        return base64DataString;}
+
+
+
+                  catch (Exception e) 
+          {return e}
 
        }
     }
