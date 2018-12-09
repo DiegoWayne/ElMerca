@@ -7,7 +7,7 @@
       private String driver = "com.mysql.jdbc.Driver";       
       private String url = "jdbc:mysql://elmer2.com/ElMerca";
       private String usuario = "BrendaAilz";
-      private String clave = "12345";
+      private String clave = "123456";
 
       private Connection conn = null;
       private ResultSet result = null;
